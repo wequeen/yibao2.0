@@ -48,7 +48,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/corners_bg"
+        android:background="@drawable/corners_default"
         android:orientation="vertical"
 
         android:padding="10dp">
@@ -57,7 +57,7 @@
             android:id="@+id/bar_course"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_border"
+            android:background="@drawable/line_bottom"
             android:gravity="center_vertical"
             android:padding="10dp">
 
@@ -91,7 +91,7 @@
             android:id="@+id/bar_shopping"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_border"
+            android:background="@drawable/line_bottom"
             android:gravity="center_vertical"
             android:padding="10dp">
 
@@ -126,7 +126,7 @@
             android:id="@+id/bar_ticket"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:background="@drawable/layout_border"
+            android:background="@drawable/line_bottom"
             android:gravity="center_vertical"
             android:padding="10dp">
 

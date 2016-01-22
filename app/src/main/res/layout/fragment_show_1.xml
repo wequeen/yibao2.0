@@ -23,16 +23,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/bar_shengyue"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/corners_bg"
+                android:layout_height="@dimen/bar_height"
+                android:layout_margin="@dimen/bar_margin"
+                android:background="@drawable/corners_default"
                 android:gravity="center_vertical"
-                android:padding="5dp">
+                android:padding="@dimen/bar_padding">
 
                 <ImageView
                     android:id="@+id/image_shengyue"
@@ -58,11 +60,11 @@
             <RelativeLayout
                 android:id="@+id/bar_gangqin"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/corners_bg"
+                android:layout_height="@dimen/bar_height"
+                android:layout_margin="@dimen/bar_margin"
+                android:background="@drawable/corners_default"
                 android:gravity="center_vertical"
-                android:padding="5dp">
+                android:padding="@dimen/bar_padding">
 
                 <ImageView
                     android:id="@+id/image_gangqin"
@@ -88,11 +90,11 @@
             <RelativeLayout
                 android:id="@+id/bar_shoutiqin"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/corners_bg"
+                android:layout_height="@dimen/bar_height"
+                android:layout_margin="@dimen/bar_margin"
+                android:background="@drawable/corners_default"
                 android:gravity="center_vertical"
-                android:padding="5dp">
+                android:padding="@dimen/bar_padding">
 
                 <ImageView
                     android:id="@+id/image_shoutiqin"
@@ -117,11 +119,11 @@
             <RelativeLayout
                 android:id="@+id/bar_jiazigu"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/corners_bg"
+                android:layout_height="@dimen/bar_height"
+                android:layout_margin="@dimen/bar_margin"
+                android:background="@drawable/corners_default"
                 android:gravity="center_vertical"
-                android:padding="5dp">
+                android:padding="@dimen/bar_padding">
 
                 <ImageView
                     android:id="@+id/image_jiazigu"
@@ -146,11 +148,11 @@
             <RelativeLayout
                 android:id="@+id/bar_wudao"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/corners_bg"
+                android:layout_height="@dimen/bar_height"
+                android:layout_margin="@dimen/bar_margin"
+                android:background="@drawable/corners_default"
                 android:gravity="center_vertical"
-                android:padding="5dp">
+                android:padding="@dimen/bar_padding">
 
                 <ImageView
                     android:id="@+id/image_wudao"
