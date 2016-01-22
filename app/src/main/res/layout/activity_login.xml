@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical"
+    tools:context="com.zju.yibao.LOGIN">
+
+    <include layout="@layout/mytoolbar" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/hugh"
+        app:civ_border_color="@color/colorImageBorder"
+        app:civ_border_width="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/margin_left_right"
+        android:layout_marginRight="@dimen/margin_left_right"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/corners_bg"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/bar_ticket"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/layout_border"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_edittext_up"
+                android:digits="0123456789nbNB"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:hint="邮箱"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHighlight="@android:color/white"
+                android:textColorHint="@color/colorHintText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bar_personal"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/edit_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corner_edittext_down"
+                android:gravity="left"
+                android:hint="密码"
+                android:imeActionLabel="登录"
+                android:imeOptions="actionGo"
+                android:padding="10dp"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHighlight="@android:color/white"
+                android:textColorHint="@color/colorHintText" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="@dimen/margin_left_right"
+        android:layout_marginRight="@dimen/margin_left_right"
+        android:background="@drawable/corners_bg"
+        android:text="登录" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left_right"
+        android:layout_marginRight="@dimen/margin_left_right"
+        android:background="@drawable/corners_bg"
+        android:text="注册" />
+
+    <RelativeLayout
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="57dp"
+            android:src="@drawable/cat"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>

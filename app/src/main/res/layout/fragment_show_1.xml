@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1E0DE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/convenientBanner"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="#c8c8c8"
+            app:canLoop="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/bar_shengyue"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/corners_bg"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/image_shengyue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/class_shengyue" />
+
+                <TextView
+                    android:id="@+id/text_shengyue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="声乐"
+                    android:textColor="#000"
+                    android:textSize="@dimen/bar_text_size"
+                    android:layout_marginStart="27dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_shengyue" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/bar_gangqin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/corners_bg"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/image_gangqin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/class_gangqin" />
+
+                <TextView
+                    android:id="@+id/text_gangqin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="钢琴"
+                    android:textColor="#000"
+                    android:textSize="@dimen/bar_text_size"
+                    android:layout_marginStart="27dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_gangqin" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bar_shoutiqin"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/corners_bg"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/image_shoutiqin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/class_shoutiqin" />
+
+                <TextView
+                    android:id="@+id/text_shoutiqin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="手提琴"
+                    android:textColor="#000"
+                    android:textSize="@dimen/bar_text_size"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_shoutiqin"
+                    android:layout_marginStart="27dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bar_jiazigu"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/corners_bg"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/image_jiazigu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/class_jiazigu" />
+
+                <TextView
+                    android:id="@+id/text_jiazigu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="架子鼓"
+                    android:textColor="#000"
+                    android:textSize="@dimen/bar_text_size"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_jiazigu"
+                    android:layout_marginStart="27dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bar_wudao"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/corners_bg"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/image_wudao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/class_wudao" />
+
+                <TextView
+                    android:id="@+id/text_wudao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="舞蹈"
+                    android:textColor="#000"
+                    android:textSize="@dimen/bar_text_size"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_wudao"
+                    android:layout_marginStart="27dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
