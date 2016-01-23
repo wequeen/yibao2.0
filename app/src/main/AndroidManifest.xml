@@ -17,11 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HOME"
-            android:launchMode="singleInstance">
+        <activity android:name=".HOME" >
         </activity>
-        <activity android:name=".LOGIN"
-            android:parentActivityName=".HOME">
+        <activity android:name=".LOGIN" >
+        </activity>
+        <activity android:name=".COURSES" >
         </activity>
     </application>
 

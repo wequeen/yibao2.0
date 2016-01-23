@@ -5,12 +5,10 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class HOME extends AppCompatActivity implements View.OnClickListener {
@@ -18,6 +16,11 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private MyFragment1 myFragment1;
     private MyFragment2 myFragment2;
+//    private LinearLayout bar_shengyue;
+//    private LinearLayout bar_gangqin;
+//    private LinearLayout bar_shoutiqin;
+//    private LinearLayout bar_jiazigu;
+//    private LinearLayout bar_wudao;
     private LinearLayout bottom_bar_1;
     private LinearLayout bottom_bar_2;
     private TextView tv_course;
@@ -50,7 +53,7 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void initView() {
-        toolbar = (Toolbar) findViewById(R.id.home_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 

@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 public class LOADING extends Activity {
 
-    private static final int TIME = 2000;
+    private static final int TIME = 200;
     private static final int GO_HOME = 0x123;
 
     private Handler handler = new Handler() {
@@ -18,6 +18,7 @@ public class LOADING extends Activity {
                 case GO_HOME:
                     Intent intent = new Intent(LOADING.this, HOME.class);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     finish();
                     break;
             }

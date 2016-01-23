@@ -1,14 +1,43 @@
 package com.zju.yibao;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 public class LOGIN extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private TextView tv_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        initView();
+    }
+
+    private void initView() {
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText("登录");
+
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

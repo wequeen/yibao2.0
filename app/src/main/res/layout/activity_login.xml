@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context="com.zju.yibao.LOGIN">
 
-    <include layout="@layout/mytoolbar" />
+    <include layout="@layout/toolbar_home" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -19,7 +19,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="60dp"
-        android:src="@drawable/hugh"
+        android:src="@drawable/user"
         app:civ_border_color="@color/colorImageBorder"
         app:civ_border_width="3dp" />
 

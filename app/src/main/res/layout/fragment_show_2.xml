@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_my" />
+            android:src="@drawable/ic_test_my" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
-                android:src="@drawable/hugh"
+                android:src="@drawable/user"
                 app:civ_border_color="@color/colorImageBorder"
                 app:civ_border_width="3dp" />
 
