@@ -42,161 +42,22 @@
         </LinearLayout>
     </FrameLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/corners_default"
-        android:orientation="vertical"
-
         android:padding="10dp">
 
-        <RelativeLayout
-            android:id="@+id/bar_course"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/line_bottom"
-            android:gravity="center_vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/image_course"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_course" />
-
-            <TextView
-                android:id="@+id/text_course"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/image_course"
-                android:text="我的课程"
-                android:textColor="#000"
-                android:textSize="@dimen/bar_text_size" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/index_right"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/text_course"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/bar_shopping"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/line_bottom"
-            android:gravity="center_vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/image_shopping"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_shopping" />
-
-            <TextView
-                android:id="@+id/text_shopping"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/image_shopping"
-                android:text="购物车"
-                android:textColor="#000"
-                android:textSize="@dimen/bar_text_size" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/index_right"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView6"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/bar_ticket"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/line_bottom"
-            android:gravity="center_vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/image_ticket"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_ticket" />
-
-            <TextView
-                android:id="@+id/text_ticket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/image_ticket"
-                android:text="优惠券"
-                android:textColor="#000"
-                android:textSize="@dimen/bar_text_size" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/index_right"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView7"
-                android:layout_alignBottom="@+id/image_ticket"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/bar_personal"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/image_personal"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_personal" />
-
-            <TextView
-                android:id="@+id/text_personal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/image_personal"
-                android:text="个人信息"
-                android:textColor="#000"
-                android:textSize="@dimen/bar_text_size" />
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/index_right"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView8"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-    </LinearLayout>
-    <!--<TextView-->
-    <!--android:id="@+id/tv_show_message"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:gravity="center"-->
-    <!--android:text="2"-->
-    <!--android:textSize="100dp" />-->
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1.23dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </RelativeLayout>
 
 </LinearLayout>
