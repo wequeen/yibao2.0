@@ -42,6 +42,7 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         initView();
         listItems = new ArrayList<>();
         initData();
@@ -53,13 +54,6 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         user_image = (CircleImageView) root.findViewById(R.id.user_image);
         user_image.setOnClickListener(this);
         listView = (ListView) root.findViewById(R.id.list);
-    }
-
-    private void shake(View view) {
-        final TranslateAnimation anim = new TranslateAnimation(0, 10, 0, 0);
-        anim.setInterpolator(new CycleInterpolator(2f));
-        anim.setDuration(300);
-        view.startAnimation(anim);
     }
 
     private void initData() {
@@ -95,5 +89,12 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
                 shake(user_image);
                 break;
         }
+    }
+
+    private void shake(View view) {
+        final TranslateAnimation anim = new TranslateAnimation(0, 10, 0, 0);
+        anim.setInterpolator(new CycleInterpolator(2f));
+        anim.setDuration(300);
+        view.startAnimation(anim);
     }
 }
