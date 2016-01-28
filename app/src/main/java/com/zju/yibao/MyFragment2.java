@@ -23,9 +23,8 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
 
     private View root;
     private CircleImageView user_image;
-
     private ListView listView;
-    List<Map<String, Object>> listItems;
+    private List<Map<String, Object>> listItems;
     private SimpleAdapter adapter;
 
     @Override
@@ -62,9 +61,10 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
                 R.drawable.icon_shopping,
                 R.drawable.icon_ticket,
                 R.drawable.icon_personal};
+
         String[] names = new String[]{"我的课程", "购物车", "优惠券", "个人信息"};
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < icons.length; i++) {
             Map<String, Object> item = new HashMap<>();
             item.put("icon", icons[i]);
             item.put("name", names[i]);
@@ -77,7 +77,7 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         adapter = new SimpleAdapter(
                 getActivity(),
                 listItems,
-                R.layout.list_item,
+                R.layout.list_item_2,
                 new String[]{"icon", "name"},
                 new int[]{R.id.image_icon, R.id.text_name});
     }

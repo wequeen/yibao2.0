@@ -1,26 +1,41 @@
 package com.zju.yibao;
 
-import android.annotation.SuppressLint;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Atlas on 15/12/16.
  */
 
-public class MyFragment1 extends android.app.Fragment {
+public class MyFragment1 extends android.app.Fragment implements AdapterView.OnItemClickListener {
 
     private View root;
 
     private ConvenientBanner convenientBanner;
     private ArrayList<Integer> localImages = new ArrayList<>();
+
+    private ListView listView;
+    List<Map<String, Object>> listItems;
+    private SimpleAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,10 +65,17 @@ public class MyFragment1 extends android.app.Fragment {
         super.onViewCreated(view, savedInstanceState);
         initView();
         editBanner();
+
+        listItems = new ArrayList<>();
+        initData();
+        initAdapter();
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
     }
 
     private void initView() {
         convenientBanner = (ConvenientBanner) root.findViewById(R.id.convenientBanner);
+        listView = (ListView) root.findViewById(R.id.list);
     }
 
     private void editBanner() {
@@ -93,5 +115,42 @@ public class MyFragment1 extends android.app.Fragment {
             e.printStackTrace();
             return -1;
         }
+    }
+
+
+    private void initData() {
+        int[] icons = new int[]{
+                R.drawable.class_shengyue,
+                R.drawable.class_gangqin,
+                R.drawable.class_shoutiqin,
+                R.drawable.class_jiazigu,
+                R.drawable.class_wudao};
+
+        String[] names = new String[]{"声乐", "钢琴", "手提琴", "架子鼓", "舞蹈"};
+
+        for (int i = 0; i < icons.length; i++) {
+            Map<String, Object> item = new HashMap<>();
+            item.put("icon", icons[i]);
+            item.put("name", names[i]);
+
+            listItems.add(item);
+        }
+    }
+
+    private void initAdapter() {
+        adapter = new SimpleAdapter(
+                getActivity(),
+                listItems,
+                R.layout.list_item_1,
+                new String[]{"icon", "name"},
+                new int[]{R.id.image_icon, R.id.text_name});
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String class_name = ((TextView) view.findViewById(R.id.text_name)).getText().toString();
+        Intent intent = new Intent(getActivity(), COURSES.class);
+        intent.putExtra("class_name", class_name);
+        startActivity(intent);
     }
 }
