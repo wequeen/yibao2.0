@@ -27,4 +27,5 @@ dependencies {
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     compile files('libs/universal-image-loader-1.9.4.jar')
     compile project(':circleimageview')
+    compile files('libs/fastjson-1.2.5.jar')
 }
