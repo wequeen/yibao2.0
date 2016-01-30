@@ -56,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:dividerHeight="1.23dp"
+            android:listSelector="@android:color/transparent"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
     </RelativeLayout>
