@@ -1,34 +1,111 @@
 package com.zju.yibao;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class COURSES extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TextView tv_title;
+    private SearchView search_course;
+
+    private Spinner spinner_star;
+    private Spinner spinner_ways;
+    private Spinner spinner_sex;
+    private Spinner spinner_order;
+
+    private ListView listView;
+    private SimpleAdapter adapter;
+    private List<Map<String, Object>> listItems;
+
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
 
         initView();
+
     }
 
     private void initView() {
-        tv_title = (TextView) findViewById(R.id.tv_title);
-        String name = getIntent().getStringExtra("class_name");
-        tv_title.append("-" + name);
-
+        /**
+         * 设置actionbar
+         * */
         toolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        String name = getIntent().getStringExtra("class_name");
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText(name);
+
+        search_course = (SearchView) findViewById(R.id.search_course);
+        //设置searchview字体颜色
+        int id = search_course.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        TextView textView = (TextView) search_course.findViewById(id);
+        textView.setTextColor(Color.WHITE);
+        search_course.setOnQueryTextListener(queryTextListener);
+
+        /**
+         * 设置筛选条
+         * */
+        spinner_star = (Spinner) findViewById(R.id.spinner_star);
+        spinner_ways = (Spinner) findViewById(R.id.spinner_ways);
+        spinner_sex = (Spinner) findViewById(R.id.spinner_sex);
+        spinner_order = (Spinner) findViewById(R.id.spinner_order);
+
+        spinner_star.setOnItemSelectedListener(itemSelectedListener);
+        spinner_ways.setOnItemSelectedListener(itemSelectedListener);
+        spinner_sex.setOnItemSelectedListener(itemSelectedListener);
+        spinner_order.setOnItemSelectedListener(itemSelectedListener);
+
+        /**
+         * 设置listview
+         * */
+        listView = (ListView) findViewById(R.id.list);
+        listItems = new ArrayList<>();
+
+        String[] string_from = {"course_name", "course_teacher", "course_organization", "course_image"};
+        int[] int_to = {R.id.tv_course_name, R.id.tv_course_teacher, R.id.tv_course_organization, R.id.img_course};
+
+        for (int i = 0; i < 20; i++) {
+            Map<String, Object> item = new HashMap<>();
+            item.put(string_from[0], "课程" + i);
+            item.put(string_from[1], "教师" + i);
+            item.put(string_from[2], "机构" + i);
+            item.put(string_from[3], R.drawable.user);
+
+            listItems.add(item);
+        }
+        adapter = new SimpleAdapter(
+                COURSES.this,
+                listItems,
+                R.layout.list_item_course,
+                string_from,
+                int_to);
+
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(itemClickListener);
 
     }
 
@@ -41,4 +118,53 @@ public class COURSES extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            Toast.makeText(COURSES.this, query, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            return false;
+        }
+    };
+
+    AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            ((TextView) view).setTextColor(Color.WHITE);
+            switch (parent.getId()) {
+                case R.id.spinner_star:
+                    System.out.println("star");
+                    break;
+                case R.id.spinner_ways:
+                    System.out.println("ways");
+                    break;
+                case R.id.spinner_sex:
+                    System.out.println("sex");
+                    break;
+                case R.id.spinner_order:
+                    System.out.println("order");
+                    break;
+            }
+            System.out.println(position);
+            System.out.println(((TextView) view).getText());
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    };
+
+    AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(COURSES.this, "position:" + position, Toast.LENGTH_SHORT).show();
+        }
+    };
+
 }

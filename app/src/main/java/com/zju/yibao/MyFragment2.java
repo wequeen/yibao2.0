@@ -77,7 +77,7 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         adapter = new SimpleAdapter(
                 getActivity(),
                 listItems,
-                R.layout.list_item_2,
+                R.layout.list_item_fragment2,
                 new String[]{"icon", "name"},
                 new int[]{R.id.image_icon, R.id.text_name});
     }

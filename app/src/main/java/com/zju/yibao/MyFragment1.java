@@ -1,6 +1,5 @@
 package com.zju.yibao;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -141,15 +139,15 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
         adapter = new SimpleAdapter(
                 getActivity(),
                 listItems,
-                R.layout.list_item_1,
+                R.layout.list_item_fragment1,
                 new String[]{"icon", "name"},
                 new int[]{R.id.image_icon, R.id.text_name});
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String class_name = ((TextView) view.findViewById(R.id.text_name)).getText().toString();
         Intent intent = new Intent(getActivity(), COURSES.class);
+        String class_name = ((TextView) view.findViewById(R.id.text_name)).getText().toString();
         intent.putExtra("class_name", class_name);
         startActivity(intent);
     }
