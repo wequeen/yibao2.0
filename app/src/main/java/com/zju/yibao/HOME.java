@@ -2,12 +2,15 @@ package com.zju.yibao;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,11 +19,6 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private MyFragment1 myFragment1;
     private MyFragment2 myFragment2;
-//    private LinearLayout bar_shengyue;
-//    private LinearLayout bar_gangqin;
-//    private LinearLayout bar_shoutiqin;
-//    private LinearLayout bar_jiazigu;
-//    private LinearLayout bar_wudao;
     private LinearLayout bottom_bar_1;
     private LinearLayout bottom_bar_2;
     private TextView tv_course;
@@ -34,6 +32,7 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        smoothSwitchScreen();
         setContentView(R.layout.activity_home);
 
         initView();
@@ -50,21 +49,6 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
         editor.putBoolean("isLogin", isLogin);
         editor.commit();
         super.onDestroy();
-    }
-
-    private void initView() {
-        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-
-        bottom_bar_1 = (LinearLayout) findViewById(R.id.bottom_bar_1);
-        bottom_bar_1.setOnClickListener(this);
-        bottom_bar_2 = (LinearLayout) findViewById(R.id.bottom_bar_2);
-        bottom_bar_2.setOnClickListener(this);
-
-        tv_course = (TextView) findViewById(R.id.bottom_bar_tv_1);
-        tv_my = (TextView) findViewById(R.id.bottom_bar_tv_2);
-
     }
 
     @Override
@@ -110,6 +94,21 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    private void initView() {
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
+        bottom_bar_1 = (LinearLayout) findViewById(R.id.bottom_bar_1);
+        bottom_bar_1.setOnClickListener(this);
+        bottom_bar_2 = (LinearLayout) findViewById(R.id.bottom_bar_2);
+        bottom_bar_2.setOnClickListener(this);
+
+        tv_course = (TextView) findViewById(R.id.bottom_bar_tv_1);
+        tv_my = (TextView) findViewById(R.id.bottom_bar_tv_2);
+
+    }
+
     private void showFragment1() {
         if (myFragment1 == null) {
             myFragment1 = new MyFragment1();
@@ -132,5 +131,17 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
                 .commit();
         tv_my.setTextColor(getResources().getColor(R.color.colorText));
         tv_course.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+    }
+
+    private void smoothSwitchScreen() {
+        // 5.0以上修复了此bug
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            ViewGroup rootView = ((ViewGroup) this.findViewById(android.R.id.content));
+            int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+            int statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+            rootView.setPadding(0, statusBarHeight, 0, 0);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
     }
 }
