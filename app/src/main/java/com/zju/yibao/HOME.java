@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class HOME extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
+    private TextView tv_title;
     private MyFragment1 myFragment1;
     private MyFragment2 myFragment2;
     private LinearLayout bottom_bar_1;
@@ -109,6 +110,9 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void initView() {
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText("艺术宝");
+
         toolbar = (Toolbar) findViewById(R.id.mytoolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");

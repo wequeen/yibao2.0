@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context="com.zju.yibao.LOGIN">
 
-    <include layout="@layout/toolbar_home" />
+    <include layout="@layout/toolbar_default" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView

@@ -1,7 +1,9 @@
 package com.zju.yibao;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,18 +16,45 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CourseActivity extends Activity {
+public class CourseActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+    private TextView tv_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
+        initView();
+
         String json = getIntent().getStringExtra("data");
         Course course = JSON.parseObject(json, Course.class);
 
         fillData(course);
         fillComment(course);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initView() {
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText("课程详情");
+
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 

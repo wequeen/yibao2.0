@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.zju.yibao.HOME">
 
-    <include layout="@layout/toolbar_home" />
+    <include layout="@layout/toolbar_default" />
 
     <FrameLayout
         android:id="@+id/fragment_show"
