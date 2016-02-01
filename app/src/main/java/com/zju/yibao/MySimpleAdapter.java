@@ -98,10 +98,8 @@ public class MySimpleAdapter extends SimpleAdapter {
                                 @Override
                                 public void onClick(View v) {
                                     TextView textView = (TextView) v;
-                                    System.out.println(textView.getLineCount());
                                     if (textView.getLineCount() >= 3) {
                                         if (textView.getLayout().getEllipsisCount(2) > 0) {
-                                            System.out.println(textView.getLayout().getEllipsisCount(2));
                                             textView.setSingleLine(false);
                                             textView.setEllipsize(null);
                                         } else {
