@@ -47,10 +47,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/COURSES.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/COURSES.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MYCOURSE.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MYCOURSE.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/convenientbanner/src/main/res/layout/include_viewpager.xml" afterPath="$PROJECT_DIR$/convenientbanner/src/main/res/layout/include_viewpager.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yibao.iws" />
@@ -72,76 +70,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MyFragment1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyFragment1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+            <state vertical-scroll-proportion="-0.29980275">
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding>
                 <element signature="docComment;class#MyFragment1#0" expanded="false" />
                 <element signature="method#onResume#0;class#MyFragment1#0" expanded="false" />
                 <element signature="method#onPause#0;class#MyFragment1#0" expanded="false" />
                 <element signature="method#onCreateView#0;class#MyFragment1#0" expanded="false" />
-                <element signature="method#onViewCreated#0;class#MyFragment1#0" expanded="false" />
+                <element signature="method#onItemClick#0;class#MyFragment1#0" expanded="false" />
                 <element signature="method#initView#0;class#MyFragment1#0" expanded="false" />
-                <element signature="method#editBanner#0;class#MyFragment1#0" expanded="false" />
-                <element signature="e#2509#2712#0" expanded="true" />
-                <element signature="e#2711#2712#0" expanded="true" />
                 <element signature="method#initImageLocal#0;class#MyFragment1#0" expanded="false" />
                 <element signature="method#getResId#0;class#MyFragment1#0" expanded="false" />
                 <element signature="method#loadData#0;class#MyFragment1#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="COURSES.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/COURSES.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="165" column="5" selection-start-line="165" selection-start-column="5" selection-end-line="165" selection-end-column="5" />
-              <folding>
-                <element signature="method#onCreate#0;class#COURSES#0" expanded="false" />
-                <element signature="method#onOptionsItemSelected#0;class#COURSES#0" expanded="false" />
-                <element signature="method#onItemClick#0;class#COURSES#0" expanded="false" />
-                <element signature="method#initView#0;class#COURSES#0" expanded="false" />
-                <element signature="method#loadData#0;class#COURSES#0" expanded="false" />
-                <element signature="method#show_detail#0;class#COURSES#0" expanded="false" />
-                <element signature="class#5994:6335" expanded="false" />
-                <element signature="e#6292#6293#0" expanded="true" />
-                <element signature="e#6328#6329#0" expanded="true" />
-                <element signature="class#6404:7335" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyFragment2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#MyFragment2#0" expanded="false" />
-                <element signature="method#onCreateView#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#onViewCreated#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#onClick#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#onItemClick#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#initView#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#loadData#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#shake#0;class#MyFragment2#0" expanded="false" />
-                <element signature="method#showMyCourse#0;class#MyFragment2#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MYCOURSE.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MYCOURSE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32149902">
-              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -3159,7 +3103,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_course_divider.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/bean/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_course_comment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_show_1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_show_2.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_comment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MySimpleAdapter.java" />
@@ -3174,10 +3117,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/bean/MyCourse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/bean/test.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/bean/MyCourses.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/COURSES.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment2.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MYCOURSE.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_show_1.xml" />
+        <option value="$PROJECT_DIR$/convenientbanner/src/main/res/layout/include_viewpager.xml" />
       </list>
     </option>
   </component>
@@ -3373,7 +3318,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/libs/fastjson-1.2.5.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Android/Android-ConvenientBanner-master" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -3678,7 +3623,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454336630081</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="优化代码">
+      <created>1454338175594</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1454338175594</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3692,7 +3643,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66997164" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48263028" sideWeight="0.49841145" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34491315" sideWeight="0.49841145" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15307583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3769,7 +3720,8 @@
     <MESSAGE value="双击返回退出和点击展开评论" />
     <MESSAGE value="重用toolbar" />
     <MESSAGE value="添加我的课程页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加我的课程页面" />
+    <MESSAGE value="优化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3778,11 +3730,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/loading1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_test_my.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3966,16 +3913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_show_1.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56086284">
-          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_course_comment.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -4155,27 +4092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
-          <folding>
-            <element signature="docComment;class#MyFragment1#0" expanded="false" />
-            <element signature="method#onResume#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#onPause#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#onViewCreated#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#initView#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#editBanner#0;class#MyFragment1#0" expanded="false" />
-            <element signature="e#2509#2712#0" expanded="true" />
-            <element signature="e#2711#2712#0" expanded="true" />
-            <element signature="method#initImageLocal#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#getResId#0;class#MyFragment1#0" expanded="false" />
-            <element signature="method#loadData#0;class#MyFragment1#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/COURSES.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4215,9 +4131,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MYCOURSE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32149902">
+        <state vertical-scroll-proportion="0.41902313">
           <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_show_1.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60509557">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convenientbanner/src/main/res/layout/include_viewpager.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40053403">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/convenientbanner/src/main/java/com/bigkoo/convenientbanner/ConvenientBanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23264782">
+          <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zju/yibao/MyFragment1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.29980275">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <element signature="docComment;class#MyFragment1#0" expanded="false" />
+            <element signature="method#onResume#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#onPause#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#onItemClick#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#initView#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#initImageLocal#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#getResId#0;class#MyFragment1#0" expanded="false" />
+            <element signature="method#loadData#0;class#MyFragment1#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

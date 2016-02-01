@@ -10,7 +10,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.ToxicBakery.viewpager.transforms.DefaultTransformer;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 
@@ -63,7 +63,7 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
         super.onViewCreated(view, savedInstanceState);
 
         initView();
-        editBanner();
+        initBanner();
         loadData();
     }
 
@@ -81,9 +81,9 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
         listView.setOnItemClickListener(this);
     }
 
-    private void editBanner() {
-
+    private void initBanner() {
         initImageLocal();
+
         CBViewHolderCreator<LocalImageHolderView> cbViewHolderCreator1 = new CBViewHolderCreator<LocalImageHolderView>() {
             @Override
             public LocalImageHolderView createHolder() {
@@ -96,7 +96,7 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);
         try {
-            convenientBanner.getViewPager().setPageTransformer(true, CubeOutTransformer.class.newInstance());
+            convenientBanner.getViewPager().setPageTransformer(true, DefaultTransformer.class.newInstance());
         } catch (Exception e) {
         }
     }
