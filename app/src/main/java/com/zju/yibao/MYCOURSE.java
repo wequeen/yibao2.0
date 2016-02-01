@@ -24,15 +24,36 @@ public class MYCOURSE extends AppCompatActivity {
     private List<Map<String, Object>> listItems;
     private SimpleAdapter adapter;
 
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mycourse);
 
         initView();
         loadData();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initView() {
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_title.setText("我的课程");
+
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        listView = (ListView) findViewById(R.id.list);
     }
 
     private void loadData() {
@@ -68,28 +89,5 @@ public class MYCOURSE extends AppCompatActivity {
                 int_to);
 
         listView.setAdapter(adapter);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void initView() {
-        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
-        tv_title = (TextView) findViewById(R.id.tv_title);
-        listView = (ListView) findViewById(R.id.list);
-
-        tv_title.setText("我的课程");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
     }
 }

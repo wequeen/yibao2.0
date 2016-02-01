@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by Atlas on 15/12/16.
  */
-public class MyFragment2 extends android.app.Fragment implements View.OnClickListener {
+public class MyFragment2 extends android.app.Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private View root;
     private CircleImageView user_image;
@@ -45,20 +45,69 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         super.onViewCreated(view, savedInstanceState);
 
         initView();
+        loadData();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.user_image:
+                shake(user_image);
+                break;
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0:
+                showMyCourse();
+                break;
+        }
+    }
+
+    private void initView() {
+        user_image = (CircleImageView) root.findViewById(R.id.user_image);
+        user_image.setOnClickListener(this);
+
+        listView = (ListView) root.findViewById(R.id.list);
+        listView.setOnItemClickListener(this);
+    }
+
+    private void loadData() {
         listItems = new ArrayList<>();
-        initData();
-        initAdapter();
+
+        int[] icons = new int[]{
+                R.drawable.icon_course,
+                R.drawable.icon_shopping,
+                R.drawable.icon_ticket,
+                R.drawable.icon_personal};
+
+        String[] names = new String[]{"我的课程", "购物车", "优惠券", "个人信息"};
+
+        for (int i = 0; i < icons.length; i++) {
+            Map<String, Object> item = new HashMap<>();
+            item.put("icon", icons[i]);
+            item.put("name", names[i]);
+
+            listItems.add(item);
+        }
+
+        adapter = new SimpleAdapter(
+                getActivity(),
+                listItems,
+                R.layout.list_item_fragment2,
+                new String[]{"icon", "name"},
+                new int[]{R.id.image_icon, R.id.text_name});
+
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        showMyCourse();
-                        break;
-                }
-            }
-        });
+    }
+
+    private void shake(View view) {
+        final TranslateAnimation anim = new TranslateAnimation(0, 10, 0, 0);
+        anim.setInterpolator(new CycleInterpolator(2f));
+        anim.setDuration(300);
+        view.startAnimation(anim);
     }
 
     private void showMyCourse() {
@@ -87,55 +136,5 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         Intent intent = new Intent(getActivity(), MYCOURSE.class);
         intent.putExtra("data", string);
         startActivity(intent);
-    }
-
-
-    private void initView() {
-        user_image = (CircleImageView) root.findViewById(R.id.user_image);
-        user_image.setOnClickListener(this);
-        listView = (ListView) root.findViewById(R.id.list);
-    }
-
-    private void initData() {
-        int[] icons = new int[]{
-                R.drawable.icon_course,
-                R.drawable.icon_shopping,
-                R.drawable.icon_ticket,
-                R.drawable.icon_personal};
-
-        String[] names = new String[]{"我的课程", "购物车", "优惠券", "个人信息"};
-
-        for (int i = 0; i < icons.length; i++) {
-            Map<String, Object> item = new HashMap<>();
-            item.put("icon", icons[i]);
-            item.put("name", names[i]);
-
-            listItems.add(item);
-        }
-    }
-
-    private void initAdapter() {
-        adapter = new SimpleAdapter(
-                getActivity(),
-                listItems,
-                R.layout.list_item_fragment2,
-                new String[]{"icon", "name"},
-                new int[]{R.id.image_icon, R.id.text_name});
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.user_image:
-                shake(user_image);
-                break;
-        }
-    }
-
-    private void shake(View view) {
-        final TranslateAnimation anim = new TranslateAnimation(0, 10, 0, 0);
-        anim.setInterpolator(new CycleInterpolator(2f));
-        anim.setDuration(300);
-        view.startAnimation(anim);
     }
 }

@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class COURSES extends AppCompatActivity {
+public class COURSES extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private Toolbar toolbar;
     private TextView tv_title;
@@ -41,6 +41,7 @@ public class COURSES extends AppCompatActivity {
         setContentView(R.layout.activity_courses);
 
         initView();
+        loadData();
     }
 
     @Override
@@ -51,6 +52,12 @@ public class COURSES extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(COURSES.this, "position:" + position, Toast.LENGTH_SHORT).show();
+        show_detail();
     }
 
     private void initView() {
@@ -91,6 +98,11 @@ public class COURSES extends AppCompatActivity {
          * 设置listview
          * */
         listView = (ListView) findViewById(R.id.list);
+        listView.setOnItemClickListener(this);
+
+    }
+
+    private void loadData() {
         listItems = new ArrayList<>();
 
         String[] string_from = {"course_name", "course_teacher", "course_organization", "course_image"};
@@ -113,8 +125,44 @@ public class COURSES extends AppCompatActivity {
                 int_to);
 
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(itemClickListener);
+    }
 
+    private void show_detail() {
+
+        String string = "{\n" +
+                "    \"courseId\": 1,\n" +
+                "    \"courseName\": \"声乐1\",\n" +
+                "    \"teacherName\": \"陈红\",\n" +
+                "    \"mainImage\": \"meiyou\",\n" +
+                "    \"courseDesc\": \"声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1\",\n" +
+                "    \"courseStatus\": 1002,\n" +
+                "    \"education\": \"本科\",\n" +
+                "    \"seniority\": 6,\n" +
+                "    \"description\": \"很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮\",\n" +
+                "    \"teacherHeadPortraits\": null,\n" +
+                "    \"organizationName\": \"新东方\",\n" +
+                "    \"organizationDescription\": \"新东方教育\",\n" +
+                "    \"organizationImageId\": null,\n" +
+                "    \"courseCommentViews\": [\n" +
+                "        {\n" +
+                "            \"studentName\": \"hardor\",\n" +
+                "            \"starLevel\": \"2\",\n" +
+                "            \"comment\": \"真好\",\n" +
+                "            \"studentHeadPortraits\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"studentName\": \"xiaoli\",\n" +
+                "            \"starLevel\": \"4\",\n" +
+                "            \"comment\": \"很棒\",\n" +
+                "            \"studentHeadPortraits\": null\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
+
+        Intent intent = new Intent(COURSES.this, CourseActivity.class);
+        intent.putExtra("data", string);
+
+        startActivity(intent);
     }
 
     SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
@@ -157,51 +205,4 @@ public class COURSES extends AppCompatActivity {
 
         }
     };
-
-    AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Toast.makeText(COURSES.this, "position:" + position, Toast.LENGTH_SHORT).show();
-            show_detail();
-        }
-    };
-
-    private void show_detail() {
-
-        String string = "{\n" +
-                "    \"courseId\": 1,\n" +
-                "    \"courseName\": \"声乐1\",\n" +
-                "    \"teacherName\": \"陈红\",\n" +
-                "    \"mainImage\": \"meiyou\",\n" +
-                "    \"courseDesc\": \"声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1声乐1\",\n" +
-                "    \"courseStatus\": 1002,\n" +
-                "    \"education\": \"本科\",\n" +
-                "    \"seniority\": 6,\n" +
-                "    \"description\": \"很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮很漂亮\",\n" +
-                "    \"teacherHeadPortraits\": null,\n" +
-                "    \"organizationName\": \"新东方\",\n" +
-                "    \"organizationDescription\": \"新东方教育\",\n" +
-                "    \"organizationImageId\": null,\n" +
-                "    \"courseCommentViews\": [\n" +
-                "        {\n" +
-                "            \"studentName\": \"hardor\",\n" +
-                "            \"starLevel\": \"2\",\n" +
-                "            \"comment\": \"真好\",\n" +
-                "            \"studentHeadPortraits\": null\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"studentName\": \"xiaoli\",\n" +
-                "            \"starLevel\": \"4\",\n" +
-                "            \"comment\": \"很棒\",\n" +
-                "            \"studentHeadPortraits\": null\n" +
-                "        }\n" +
-                "    ]\n" +
-                "}";
-
-        Intent intent = new Intent(COURSES.this, CourseActivity.class);
-        intent.putExtra("data", string);
-
-        startActivity(intent);
-    }
-
 }

@@ -32,7 +32,7 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
     private ArrayList<Integer> localImages = new ArrayList<>();
 
     private ListView listView;
-    List<Map<String, Object>> listItems;
+    private List<Map<String, Object>> listItems;
     private SimpleAdapter adapter;
 
     @Override
@@ -61,19 +61,24 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         initView();
         editBanner();
+        loadData();
+    }
 
-        listItems = new ArrayList<>();
-        initData();
-        initAdapter();
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(this);
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(getActivity(), COURSES.class);
+        String class_name = ((TextView) view.findViewById(R.id.text_name)).getText().toString();
+        intent.putExtra("class_name", class_name);
+        startActivity(intent);
     }
 
     private void initView() {
         convenientBanner = (ConvenientBanner) root.findViewById(R.id.convenientBanner);
         listView = (ListView) root.findViewById(R.id.list);
+        listView.setOnItemClickListener(this);
     }
 
     private void editBanner() {
@@ -115,8 +120,9 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
         }
     }
 
+    private void loadData() {
+        listItems = new ArrayList<>();
 
-    private void initData() {
         int[] icons = new int[]{
                 R.drawable.class_shengyue,
                 R.drawable.class_gangqin,
@@ -133,22 +139,14 @@ public class MyFragment1 extends android.app.Fragment implements AdapterView.OnI
 
             listItems.add(item);
         }
-    }
 
-    private void initAdapter() {
         adapter = new SimpleAdapter(
                 getActivity(),
                 listItems,
                 R.layout.list_item_fragment1,
                 new String[]{"icon", "name"},
                 new int[]{R.id.image_icon, R.id.text_name});
-    }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(getActivity(), COURSES.class);
-        String class_name = ((TextView) view.findViewById(R.id.text_name)).getText().toString();
-        intent.putExtra("class_name", class_name);
-        startActivity(intent);
+        listView.setAdapter(adapter);
     }
 }
