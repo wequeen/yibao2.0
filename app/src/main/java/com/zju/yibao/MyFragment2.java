@@ -1,11 +1,13 @@
 package com.zju.yibao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -47,7 +49,46 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         initData();
         initAdapter();
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        showMyCourse();
+                        break;
+                }
+            }
+        });
     }
+
+    private void showMyCourse() {
+
+        String string = "[\n" +
+                "    {\n" +
+                "        \"couStuId\": 1,\n" +
+                "        \"courseId\": 1,\n" +
+                "        \"courseName\": \"声乐1\",\n" +
+                "        \"mainImage\": \"meiyou\",\n" +
+                "        \"teacherName\": \"陈红\",\n" +
+                "        \"teachAddress\": \"宁波\",\n" +
+                "        \"organization\": \"新东方\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"couStuId\": 3,\n" +
+                "        \"courseId\": 2,\n" +
+                "        \"courseName\": \"声乐2\",\n" +
+                "        \"mainImage\": \"meiyou\",\n" +
+                "        \"teacherName\": \"陈红\",\n" +
+                "        \"teachAddress\": \"宁波\",\n" +
+                "        \"organization\": \"新东方\"\n" +
+                "    }\n" +
+                "]";
+
+        Intent intent = new Intent(getActivity(), MYCOURSE.class);
+        intent.putExtra("data", string);
+        startActivity(intent);
+    }
+
 
     private void initView() {
         user_image = (CircleImageView) root.findViewById(R.id.user_image);
