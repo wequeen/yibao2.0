@@ -1,6 +1,7 @@
 package com.zju.yibao;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,6 +93,25 @@ public class MySimpleAdapter extends SimpleAdapter {
                         }
                     } else if (v instanceof TextView) {
                         setViewText((TextView) v, text);
+                        if (v.getId() == R.id.tv_comment) {
+                            v.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    TextView textView = (TextView) v;
+                                    System.out.println(textView.getLineCount());
+                                    if (textView.getLineCount() >= 3) {
+                                        if (textView.getLayout().getEllipsisCount(2) > 0) {
+                                            System.out.println(textView.getLayout().getEllipsisCount(2));
+                                            textView.setSingleLine(false);
+                                            textView.setEllipsize(null);
+                                        } else {
+                                            textView.setLines(3);
+                                            textView.setEllipsize(TextUtils.TruncateAt.END);
+                                        }
+                                    }
+                                }
+                            });
+                        }
                     } else if (v instanceof ImageView) {
                         if (data instanceof Integer) {
                             setViewImage((ImageView) v, (Integer) data);

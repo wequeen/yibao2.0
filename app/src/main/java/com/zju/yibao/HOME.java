@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HOME extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,6 +29,9 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferences.Editor editor;
 
     private boolean isLogin;
+
+    private long currentBackPressedTime = 0;
+    private static final int BACK_PRESSED_INTERVAL = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +95,16 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
                 }
                 break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (System.currentTimeMillis() - currentBackPressedTime > BACK_PRESSED_INTERVAL) {
+            currentBackPressedTime = System.currentTimeMillis();
+            Toast.makeText(this, "再按一次返回键退出程序", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
         }
     }
 
