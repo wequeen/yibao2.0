@@ -61,7 +61,10 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                showMyCourse();
+                showMyCourses();
+                break;
+            case 2:
+                showMyDiscounts();
                 break;
         }
     }
@@ -110,7 +113,7 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         view.startAnimation(anim);
     }
 
-    private void showMyCourse() {
+    private void showMyCourses() {
 
         String string = "[\n" +
                 "    {\n" +
@@ -134,6 +137,15 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
                 "]";
 
         Intent intent = new Intent(getActivity(), MYCOURSE.class);
+        intent.putExtra("data", string);
+        startActivity(intent);
+    }
+
+    private void showMyDiscounts() {
+
+        String string = "[{\"discountId\":1,\"discountCode\":\"123456\",\"courseId\":1,\"courseName\":\"声乐1\",\"mainImage\":\"meiyou\",\"teacherName\":\"陈红\",\"organizationName\":\"新东方\"},{\"discountId\":2,\"discountCode\":\"654321\",\"courseId\":2,\"courseName\":\"声乐2\",\"mainImage\":\"meiyou\",\"teacherName\":\"陈红\",\"organizationName\":\"新东方\"}]\n";
+
+        Intent intent = new Intent(getActivity(), MYDISCOUNTS.class);
         intent.putExtra("data", string);
         startActivity(intent);
     }

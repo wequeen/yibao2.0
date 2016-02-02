@@ -27,7 +27,7 @@ public class MYCOURSE extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mycourse);
+        setContentView(R.layout.activity_mycourses);
 
         initView();
         loadData();
