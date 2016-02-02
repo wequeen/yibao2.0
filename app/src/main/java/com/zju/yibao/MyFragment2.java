@@ -143,7 +143,26 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
 
     private void showMyDiscounts() {
 
-        String string = "[{\"discountId\":1,\"discountCode\":\"123456\",\"courseId\":1,\"courseName\":\"声乐1\",\"mainImage\":\"meiyou\",\"teacherName\":\"陈红\",\"organizationName\":\"新东方\"},{\"discountId\":2,\"discountCode\":\"654321\",\"courseId\":2,\"courseName\":\"声乐2\",\"mainImage\":\"meiyou\",\"teacherName\":\"陈红\",\"organizationName\":\"新东方\"}]\n";
+        String string = "[\n" +
+                "    {\n" +
+                "        \"discountId\": 1,\n" +
+                "        \"discountCode\": \"123456\",\n" +
+                "        \"courseId\": 1,\n" +
+                "        \"courseName\": \"声乐1\",\n" +
+                "        \"mainImage\": \"meiyou\",\n" +
+                "        \"teacherName\": \"陈红\",\n" +
+                "        \"organizationName\": \"新东方\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"discountId\": 2,\n" +
+                "        \"discountCode\": \"654321\",\n" +
+                "        \"courseId\": 2,\n" +
+                "        \"courseName\": \"声乐2\",\n" +
+                "        \"mainImage\": \"meiyou\",\n" +
+                "        \"teacherName\": \"陈红\",\n" +
+                "        \"organizationName\": \"新东方\"\n" +
+                "    }\n" +
+                "]";
 
         Intent intent = new Intent(getActivity(), MYDISCOUNTS.class);
         intent.putExtra("data", string);
