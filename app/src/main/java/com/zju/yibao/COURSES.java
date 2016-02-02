@@ -1,10 +1,12 @@
 package com.zju.yibao;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -169,6 +171,11 @@ public class COURSES extends AppCompatActivity implements AdapterView.OnItemClic
         @Override
         public boolean onQueryTextSubmit(String query) {
             Toast.makeText(COURSES.this, query, Toast.LENGTH_SHORT).show();
+            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (manager != null) {
+                manager.hideSoftInputFromWindow(search_course.getWindowToken(), 0);
+            }
+
             return false;
         }
 
