@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".MYDISCOUNTS" >
         </activity>
+        <activity android:name=".MYDISCOUNTDETAIL" >
+        </activity>
     </application>
 
 </manifest>
