@@ -66,6 +66,11 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
             case 2:
                 showMyDiscounts();
                 break;
+            case 3:
+                Intent intent = new Intent(getActivity(), USERINFO.class);
+                startActivity(intent);
+
+                break;
         }
     }
 
@@ -76,6 +81,18 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         listView = (ListView) root.findViewById(R.id.list);
         listView.setOnItemClickListener(this);
     }
+//    ListView.OnItemClickListener listener = new ListView.OnItemClickListener(){
+//        @Override
+//        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//            HashMap<String,String> map=(HashMap<String,String>)listView.getItemAtPosition(i);
+//            //String title=map.get("icon");
+//            String content=map.get("name");
+//            if (content.equals("个人信息")){
+//                //实现跳转个人信息
+//            }
+//
+//        }
+//    };
 
     private void loadData() {
         listItems = new ArrayList<>();
