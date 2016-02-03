@@ -2,18 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/com.bigkoo/convenientbanner/2.0.3/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-aa125a2d4614c963c86c8149906076c64f722ff2.jar" />
-    </item>
-    <item
-        jar="/Users/atlas/Desktop/O2O/yibao/app/libs/fastjson-1.2.5.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="9f675e9a1b2bf1224183005752a9214226e8aa8e">
-        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/fastjson-1.2.5-36eab48349b668eb4d27d817f5ff7cbda5eea942.jar" />
+        sha1="d2afd983349c8f5e95955ffdad4bab84ce0d20d1">
+        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-0de3cb42b5ba0e7fc910ad4fcb717003144ab630.jar" />
     </item>
     <item
         jar="/Users/atlas/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
@@ -21,6 +14,13 @@
         revision="23.0.1"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
         <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-c3bb2bca13444f67b2dbc4c51139c6d11d3e45b3.jar" />
+    </item>
+    <item
+        jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-aa125a2d4614c963c86c8149906076c64f722ff2.jar" />
     </item>
     <item
         jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
@@ -37,18 +37,18 @@
         <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-c56ee3eae7bb527b18a2a44fc442777f417f945c.jar" />
     </item>
     <item
+        jar="/Users/atlas/Desktop/O2O/yibao/app/libs/fastjson-1.2.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9f675e9a1b2bf1224183005752a9214226e8aa8e">
+        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/fastjson-1.2.5-36eab48349b668eb4d27d817f5ff7cbda5eea942.jar" />
+    </item>
+    <item
         jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/yibao/circleimageview/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="7aa2807bb8b2928a2e5f9d47004d481c82f3fc6a">
+        sha1="1c2372d38774268600ed5508b7585eaadf7f88c3">
         <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-6c8a59076071c2e90db3975c16fad9bd5a5f78a9.jar" />
-    </item>
-    <item
-        jar="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/exploded-aar/com.bigkoo/convenientbanner/2.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="98e7fa7ffa12d11349b8dc3178b24dea0a234bf6">
-        <dex dex="/Users/atlas/Desktop/O2O/yibao/app/build/intermediates/pre-dexed/debug/classes-0de3cb42b5ba0e7fc910ad4fcb717003144ab630.jar" />
     </item>
     <item
         jar="/Users/atlas/Desktop/O2O/yibao/app/libs/universal-image-loader-1.9.4.jar"

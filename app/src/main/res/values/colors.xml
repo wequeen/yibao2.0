@@ -14,4 +14,8 @@
     <color name="colorTransparent" >#51ffffff</color>
     <color name="colorTransparentBACK" >#961c1c1c</color>
     <color name="colorTransparentPrimary" >#9bffffff</color>
+
+    <color name="colorJump">#87ceeb</color>
+    <color name="colorflag_true">#00ff00</color>
+    <color name="colorflag_false">#bebebe</color>
 </resources>
