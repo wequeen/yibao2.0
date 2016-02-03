@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -101,6 +102,17 @@ public class COURSES extends AppCompatActivity implements AdapterView.OnItemClic
          * */
         listView = (ListView) findViewById(R.id.list);
         listView.setOnItemClickListener(this);
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                hideSoftInput();
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            }
+        });
 
     }
 
@@ -161,21 +173,25 @@ public class COURSES extends AppCompatActivity implements AdapterView.OnItemClic
                 "    ]\n" +
                 "}";
 
-        Intent intent = new Intent(COURSES.this, CourseActivity.class);
+        Intent intent = new Intent(COURSES.this, COURSEDETAIL.class);
         intent.putExtra("data", string);
 
         startActivity(intent);
+    }
+
+    private void hideSoftInput() {
+        InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (manager != null) {
+            manager.hideSoftInputFromWindow(search_course.getWindowToken(), 0);
+        }
     }
 
     SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String query) {
             Toast.makeText(COURSES.this, query, Toast.LENGTH_SHORT).show();
-            InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (manager != null) {
-                manager.hideSoftInputFromWindow(search_course.getWindowToken(), 0);
-            }
-
+            hideSoftInput();
+            search_course.clearFocus();
             return false;
         }
 
