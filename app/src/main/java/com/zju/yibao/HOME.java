@@ -46,6 +46,7 @@ public class HOME extends AppCompatActivity implements View.OnClickListener {
         preferences = getSharedPreferences("data", MODE_PRIVATE);
         editor = preferences.edit();
         isLogin = preferences.getBoolean("isLogin", false);
+        //isLogin = true;
 
     }
 

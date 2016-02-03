@@ -23,6 +23,14 @@
         </activity>
         <activity android:name=".COURSES" >
         </activity>
+        <activity android:name=".REGISTER1" >
+        </activity>
+        <activity android:name=".REGISTER2" >
+        </activity>
+        <activity android:name=".REGISTER3" >
+        </activity>
+        <activity android:name=".USERINFO" >
+        </activity>
         <activity android:name=".CourseActivity" >
         </activity>
     </application>

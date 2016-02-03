@@ -1,11 +1,13 @@
 package com.zju.yibao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -53,7 +55,20 @@ public class MyFragment2 extends android.app.Fragment implements View.OnClickLis
         user_image = (CircleImageView) root.findViewById(R.id.user_image);
         user_image.setOnClickListener(this);
         listView = (ListView) root.findViewById(R.id.list);
+        listView.setOnItemClickListener(listener);
     }
+    ListView.OnItemClickListener listener = new ListView.OnItemClickListener(){
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            HashMap<String,String> map=(HashMap<String,String>)listView.getItemAtPosition(i);
+            //String title=map.get("icon");
+            String content=map.get("name");
+            if (content.equals("个人信息")){
+                //实现跳转个人信息
+            }
+
+        }
+    };
 
     private void initData() {
         int[] icons = new int[]{
